@@ -1,3 +1,31 @@
+
+#container{
+    background-color: white;
+    display: flex;
+    height: 60vw;
+    width: 40vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1%;
+    border-radius: 5%;
+    border: 1.5vh solid #333;
+    border-top: 4vh solid #333;
+    border-bottom: 4vh solid #333;
+    margin: auto;
+}
+.box{
+    width: 9vw;
+    height: 9vw;
+    flex-basis: 1;
+    background-color: gray;
+    border-radius: 20%;
+}
+.box:hover{
+    background-color: #999;
+}
+body{
+    background-color: black;
+}
 h1{
-    color: red;
+   color: white;
 }
