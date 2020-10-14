@@ -1,0 +1,55 @@
+.footer{
+    position: fixed;
+    bottom:0px;
+
+
+}
+body{
+    background-color: black;
+    color: white;
+}
+#bar{
+    position: absolute;
+    top: 45%;
+    right: 25%;
+    width: 50%;
+    text-align: center;
+    font-size: 500%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(-66.6deg,#D177A3, #D177A3, #6B79C2, #6CD996,#6CD996);
+    background-size: 300%;
+    border-radius: 10vw;
+    animation-name: load;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.5,.5,0,1);
+}
+#skew{  
+    animation-name: skew;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0,0,0,0);
+    color: black;
+}
+@keyframes skew{
+    0%{
+        transform: skewX(-20deg);
+    }
+    50%{
+        transform: skewX(20deg);
+    }
+    100%{
+        transform: skewX(-20deg);
+    }
+}
+@keyframes load {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
