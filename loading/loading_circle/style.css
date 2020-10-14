@@ -6,30 +6,64 @@
 }
 body{
     background-color: black;
-}
-h1{
-    color: blue;
+    color: white;
+    background-attachment: fixed;
 }
 #circle{
-    background-color: black;
-    background: linear-gradient(-66.6deg,#D177A3, #D177A3, #6B79C2, #6CD996,#6CD996);
-    background-size: 300%;
+    background: linear-gradient(-66.6deg,#FF70CB, #CB6FFC, #8A7DFF, #669FE8,#70FAFF);
     position: fixed;
-    top: mix(12.5vh,12.5vw);
+    text-align: center;
+    overflow-wrap: break-word;
+    padding:10%;
+    top: max(12.5vh,12.5vw);
     left:max(25vh,25vw);
-    height: max(50vh,50vw);
-    width: max(50vh,50vw);
+    height: max(30vh,30vw);
+    width: max(30vh,30vw);
     border-radius: 50%;
-    animation: spin ;
+    animation-name: spin;
     animation-duration:10s;
     animation-timing-function: cubic-bezier(1,0,.666,1);
     animation-iteration-count: infinite;
+    font-size: 300%;
+}
+#circle:hover{
+    animation-play-state: paused;
+    animation-direction: reverse;
+    animation-iteration-count: 0;
+}
+#circle:active{
+    display: none;
+}
+#woo{
+    display: none;
+}
+#circle:hover #wee{
+    display: none;
+}
+#circle:hover #woo{
+    display: block;
+}
+#circle:hover #smile{
+    display: none;
 }
 @keyframes spin{
     0%{
+        font-size: 0%;
+        color: rgba(0, 0, 0, 0);
         transform: rotateY(0deg);
     }
+    50%{
+
+        font-size: 300%;
+        color: rgb(255, 255, 255);
+    }
+    90%{
+        transform: rotateY(3600deg);
+    }
     100%{
+        font-size: 0%;
+        color: rgba(0, 0, 0, 0);
         transform: rotateY(3600deg);
     }
 }
+
