@@ -15,7 +15,6 @@ body{
     text-align: center;
     overflow-wrap: break-word;
     padding:10%;
-    top: max(12.5vh,12.5vw);
     left:max(25vh,25vw);
     height: max(30vh,30vw);
     width: max(30vh,30vw);
@@ -24,7 +23,10 @@ body{
     animation-duration:10s;
     animation-timing-function: cubic-bezier(1,0,.666,1);
     animation-iteration-count: infinite;
-    font-size: 300%;
+    font-size:  max(4vh,4vw);
+}
+#box{
+    transform: scale(.75);
 }
 #circle:hover{
     animation-play-state: paused;
@@ -54,7 +56,7 @@ body{
     }
     50%{
 
-        font-size: 300%;
+        font-size:  max(4vh,4vw);
         color: rgb(255, 255, 255);
     }
     90%{
