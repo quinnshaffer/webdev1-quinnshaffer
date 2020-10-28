@@ -1,0 +1,16 @@
+body{
+    color: white;
+    background-color: black;
+}
+.back {
+    position: absolute;
+    font-size: 40px;
+    bottom: 0px;
+    right: 0;
+    text-decoration: none;
+    color: lightgray;
+}
+a{
+    text-decoration: none;
+    color: lightgray;
+}
