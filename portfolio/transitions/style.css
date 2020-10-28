@@ -1,3 +1,17 @@
-body{
-    color: red;
+
+#circle{
+    
+         --size:50vmin;    
+         width:var(--size);
+        height:var(--size);
+        position: fixed;
+        left: calc((100vw - var(--size)) / 2);
+        top: calc((100vh - var(--size) - 8em) / 2);
+        position: relative;
+        background-color: purple;
+        transition: transform 6s;
+      }
+
+#circle:hover{
+    transform: rotate(360deg);
 }

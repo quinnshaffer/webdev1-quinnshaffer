@@ -1,3 +1,6 @@
-body{
-    color: red;
+#audio{
+    position: absolute;
+    size:10%;
+    top:50vh;
+    left:50vw;
 }

@@ -1,3 +1,17 @@
 body{
+    color: black;
+    background-image: url(../images/smalltree.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.option{
+    font-size: 3em;
+}
+
+#repeat:hover > body{
+    background-repeat: repeat;
     color: red;
+}
+#repeat:hover{
+    color:red;
 }

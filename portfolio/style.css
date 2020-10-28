@@ -4,7 +4,7 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .back {
-    position: absolute;
+    position: fixed;
     font-size: 40px;
     bottom: 0px;
     right: 0;
