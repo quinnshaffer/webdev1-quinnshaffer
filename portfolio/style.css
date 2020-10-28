@@ -1,6 +1,7 @@
 body{
     color: white;
     background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .back {
     position: absolute;
@@ -13,4 +14,29 @@ body{
 a{
     text-decoration: none;
     color: lightgray;
+}
+.header{
+    font-size: 4em;
+}
+
+#container{
+    display: flex;
+    height: 70vw;
+    width: 95vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+.box{
+    width: 20vw;
+    height: 20vw;
+    flex-basis: 1;
+    border-radius: 20%;
+}
+.boxin{
+    padding: .5vw;
+    justify-content: center;
+}
+img{
+    width:100%
 }
