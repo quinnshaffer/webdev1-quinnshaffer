@@ -1,0 +1,63 @@
+Date : 2020-10-28 22:00:15
+Directory : c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio
+Total : 26 files,  417 codes, 0 comments, 23 blanks, all 440 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| HTML     |         13 |        224 |          0 |         12 |        236 |
+| CSS      |         13 |        193 |          0 |         11 |        204 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                        | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                           |         26 |        417 |          0 |         23 |        440 |
+| anchor_tags                                                                                                 |          2 |         26 |          0 |          3 |         29 |
+| audio                                                                                                       |          2 |         25 |          0 |          0 |         25 |
+| background_images                                                                                           |          2 |         30 |          0 |          1 |         31 |
+| clamp                                                                                                       |          2 |         23 |          0 |          0 |         23 |
+| iframes                                                                                                     |          2 |         24 |          0 |          1 |         25 |
+| media_queries                                                                                               |          2 |         27 |          0 |          1 |         28 |
+| pseudo_classes                                                                                              |          2 |         42 |          0 |          1 |         43 |
+| pseudo_elements                                                                                             |          2 |         25 |          0 |          4 |         29 |
+| transitions                                                                                                 |          2 |         29 |          0 |          4 |         33 |
+| variable_fonts                                                                                              |          2 |         32 |          0 |          5 |         37 |
+| video                                                                                                       |          2 |         21 |          0 |          0 |         21 |
+| vmin_vmax                                                                                                   |          2 |         42 |          0 |          1 |         43 |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                    | language | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\anchor_tags\index.html       | HTML     |         17 |          0 |          3 |         20 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\anchor_tags\style.css        | CSS      |          9 |          0 |          0 |          9 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\audio\index.html             | HTML     |         19 |          0 |          0 |         19 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\audio\style.css              | CSS      |          6 |          0 |          0 |          6 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\background_images\index.html | HTML     |         14 |          0 |          0 |         14 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\background_images\style.css  | CSS      |         16 |          0 |          1 |         17 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\clamp\index.html             | HTML     |         15 |          0 |          0 |         15 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\clamp\style.css              | CSS      |          8 |          0 |          0 |          8 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\iframes\index.html           | HTML     |         16 |          0 |          1 |         17 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\iframes\style.css            | CSS      |          8 |          0 |          0 |          8 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\index.html                   | HTML     |         26 |          0 |          0 |         26 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\media_queries\index.html     | HTML     |         15 |          0 |          0 |         15 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\media_queries\style.css      | CSS      |         12 |          0 |          1 |         13 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\pseudo_classes\index.html    | HTML     |         15 |          0 |          0 |         15 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\pseudo_classes\style.css     | CSS      |         27 |          0 |          1 |         28 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\pseudo_elements\index.html   | HTML     |         22 |          0 |          4 |         26 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\pseudo_elements\style.css    | CSS      |          3 |          0 |          0 |          3 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\style.css                    | CSS      |         45 |          0 |          2 |         47 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\transitions\index.html       | HTML     |         15 |          0 |          0 |         15 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\transitions\style.css        | CSS      |         14 |          0 |          4 |         18 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\variable_fonts\index.html    | HTML     |         15 |          0 |          3 |         18 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\variable_fonts\style.css     | CSS      |         17 |          0 |          2 |         19 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\video\index.html             | HTML     |         17 |          0 |          0 |         17 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\video\style.css              | CSS      |          4 |          0 |          0 |          4 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\vmin_vmax\index.html         | HTML     |         18 |          0 |          1 |         19 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\portfolio\vmin_vmax\style.css          | CSS      |         24 |          0 |          0 |         24 |
+| Total                                                                                                       |          |        417 |          0 |         23 |        440 |
++-------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

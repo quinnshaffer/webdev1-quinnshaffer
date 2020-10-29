@@ -27,7 +27,7 @@ a{
 
 #container{
     display: flex;
-    height: 70vw;
+    height: 90vh;
     width: 95vw;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -35,9 +35,8 @@ a{
 }
 .box{
     width: 20vw;
-    height: 20vw;
+    height: 10vw;
     flex-basis: 1;
-    border-radius: 20%;
 }
 .boxin{
     padding: .5vw;

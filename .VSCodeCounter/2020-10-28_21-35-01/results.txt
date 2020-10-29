@@ -1,0 +1,32 @@
+Date : 2020-10-28 21:35:01
+Directory : c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\loading
+Total : 5 files,  225 codes, 0 comments, 12 blanks, all 237 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| CSS      |          2 |        172 |          0 |         11 |        183 |
+| HTML     |          3 |         53 |          0 |          1 |         54 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                   | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                      |          5 |        225 |          0 |         12 |        237 |
+| loading_bar                                                                                            |          2 |        126 |          0 |          6 |        132 |
+| loading_circle                                                                                         |          2 |         86 |          0 |          6 |         92 |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                               | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\loading\index.html                | HTML     |         13 |          0 |          0 |         13 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\loading\loading_bar\index.html    | HTML     |         21 |          0 |          0 |         21 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\loading\loading_bar\style.css     | CSS      |        105 |          0 |          6 |        111 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\loading\loading_circle\index.html | HTML     |         19 |          0 |          1 |         20 |
+| c:\Users\Quinn\OneDrive\Columbia\Web Design\Git\webdev1-quinnshaffer\loading\loading_circle\style.css  | CSS      |         67 |          0 |          5 |         72 |
+| Total                                                                                                  |          |        225 |          0 |         12 |        237 |
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

@@ -13,7 +13,7 @@
    top: calc((100vh - var(--size) - 1em) / 2);
    border-radius: 0%;
    background: radial-gradient(circle, rgba(237,28,222,1) 0%, rgba(91,29,207,1) 100%);
-   transition: border-radius 1s;
+   transition: transform 1s, border-radius 1s;
    text-align: center;
     line-height: var(--size);
     font-size: 5em;
@@ -21,6 +21,7 @@
  }
  #circle:hover{
      border-radius: 50%;
+     transform: rotate(360deg);
  }
  #circle:active{
     background: radial-gradient(circle, rgba(28,237,164,1) 0%, rgba(91,29,207,1) 100%);
