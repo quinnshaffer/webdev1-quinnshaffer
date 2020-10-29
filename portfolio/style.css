@@ -2,7 +2,13 @@ body{
     color: white;
     background-color: black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    -ms-overflow-style: none;
+  scrollbar-width: none;
+
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
 .back {
     position: fixed;
     font-size: 40px;
