@@ -4,8 +4,7 @@
 }
 body{
     background-color: black;
-}
-h1{
+    
     color: white;
 }
 a{
@@ -15,11 +14,13 @@ a{
 .header{
     font-size: 4em;
 }
-
+h1{
+    font-size: 3em;
+}
 #container{
     display: flex;
     height: 80vh;
-    width: 95vw;
+    width: 90vw;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: auto;

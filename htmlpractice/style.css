@@ -1,0 +1,21 @@
+#h {
+    color: green;
+    height: 50vh;
+  }
+  .default{
+    background-color:lightgray;
+  }
+  img{
+    width:30vw;
+    display:block;
+    margin:5%;
+    border-color: black;
+    border-style:solid;
+  }
+  div{
+   padding:20px;
+  }
+body{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
