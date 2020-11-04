@@ -1,0 +1,51 @@
+.iframebox{
+    background-color: grey;
+    border: 5px solid black;
+}
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: lightgray;
+}
+.header{
+    font-size: 4em;
+}
+
+#container{
+    display: flex;
+    height: 80vh;
+    width: 95vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+.box{
+    width: 20vw;
+    height: 20vw;
+    flex-basis: 1;
+}
+.boxin{
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 2em );
+}
+.label{
+    font-size: 2em;
+}
+iframe
+{
+    position: relative;
+    z-index: -119;
+        width: 300% !important;
+        height: 300% !important;
+        -webkit-transform: scale(.3333);
+        transform: scale(.3333);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+
+}
