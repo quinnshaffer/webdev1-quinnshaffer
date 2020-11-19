@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+    color: white;
+}
+#toggle{
+    font-size: 5em;
+}
+#pop{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: fixed;
+    text-align: center;
+    left:max(25vh,25vw);
+    top: max(25vh,25vw);;
+    height: max(25vh,25vw);
+    width: max(50vh,50vw);
+    line-height:  max(12vh,12vw);;
+    background-color: blueviolet;
+    font-size: max(6vh,6vw);
+}
+#popin{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0px;
+    text-align: center;
+    background-color: lightskyblue;
+}
