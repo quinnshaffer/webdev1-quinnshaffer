@@ -1,0 +1,20 @@
+*{
+    margin:0;
+    padding:0;
+}
+#sketch{
+position: absolute;
+left:50%;
+top: 50%;
+transform: translate(-50%,-50%);
+z-index: -1;
+}
+canvas{
+    display: block;
+}
+#words{
+    position: absolute;
+    font-size: 20vmin;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Luckiest Guy', cursive;
+}
