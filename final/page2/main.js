@@ -5,8 +5,6 @@ var min = Math.min(width, height);
 var scrollableElement = document.body; //document.getElementById('scrollableElement');
 var loops = 0;
 var flash = 0;
-var hide;
-var cnv;
 var scrollGoal = 0;
 var smoothing = 300;
 var isComplete = false;
@@ -46,12 +44,12 @@ function draw() {
     strokeWeight(0);
     fill(0, 100, 75);
     if (!isComplete) {
-        scrolled = (scrolled + scrollGoal * smoothing) / (smoothing + 1);
+        scrolled = (scrolled + scrollGoal * smoothing) / (smoothing + 1); //smooths scrolling
         scrollGoal -= .03;
         if (scrollGoal <= -30) scrollGoal = 30;
     }
     else {
-        if (intensity > -10) intensity -= .5;
+        if (intensity > -10) intensity -= .5; //fade to black
         else {
             $('#next').css({ display: "block" });
             if (!snd2played) {
@@ -63,7 +61,6 @@ function draw() {
     spiral(width / 30, width, height, 0, 0, (scrolled - height / 30) * 300);
     loops = 0;
     $('#wel').css({ top: "calc(50% + " + scrolled * 20 + "px)" });
-    strokeWeight(scrolled);
     flash++;
 }
 

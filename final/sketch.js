@@ -30,7 +30,7 @@ function setup() {
 function draw() {
   if (hasStarted) {
     if (!isLocked) {
-      xAc = (abs(mouseX - mX) * mouseWeight + xAc * response) / (response + mouseWeight);
+      xAc = (abs(mouseX - mX) * mouseWeight + xAc * response) / (response + mouseWeight); //recording acceleration of the mouse
       if (xAc < 1) xAc = 0;
       yAc = (abs(mouseY - mY) * mouseWeight + xAc * response) / (response + mouseWeight);
       if (yAc < 1) yAc = 0;
@@ -39,15 +39,14 @@ function draw() {
       mY = mouseY;
       pAc = tAc;
       tAc /= 100;
-      h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100;
-      //console.log(h, tAc);
+      h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100; //defines the curve used to calulate the color
       background(h, 50, 100);
       if (h < 15) {
         setWords('Wiggle!', h * 3.6);
       }
       else {
         li = 72.5 + h * .25;
-        w = $('#words').css({ color: "hsl(" + Math.min(h * 3.6, 360) + ",100%," + li + "%)" });
+        w = $('#words').css({ color: "hsl(" + Math.min(h * 3.6, 360) + ",100%," + li + "%)" }); 
       }
       if (h >= 100) {
         isLocked = true;
