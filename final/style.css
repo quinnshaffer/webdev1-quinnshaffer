@@ -2,6 +2,17 @@
     margin:0;
     padding:0;
 }
+body{
+    
+    font-size: 20vmin;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Luckiest Guy', cursive;
+    text-decoration: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
 #sketch{
 position: absolute;
 left:50%;
@@ -14,7 +25,20 @@ canvas{
 }
 #words{
     position: absolute;
-    font-size: 20vmin;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-family: 'Luckiest Guy', cursive;
+    color: transparent;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#wel{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
 }

@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+}
+#sketch{
+    position: absolute;
+    z-index: -1;
+    }
+canvas{
+        display: block;
+    }
+    html {
+        overflow: hidden;
+        height: 100%;
+    }

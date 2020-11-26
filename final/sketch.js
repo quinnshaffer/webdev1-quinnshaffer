@@ -1,53 +1,73 @@
-function setup() {
-  let cnv = createCanvas(innerWidth, innerHeight);
-  cnv.parent('#sketch');
-  strokeWeight(2);
-  frameRate(60);
-}
+
 var mY = 0;
 var mX = 0;
 var xAc = 0;
 var yAc = 0;
 var tAc = 0;
+var pAc = 1;
 var h = 0;
 var li = 0;
 var isLocked = false;
+var hasStarted = false;
 var snd = new Audio('blip.wav');
-snd.volume(50);
+var frames = 60;
+var mouseWeight = 1.5;
+var response = 3 * frames;
+
+function setup() {
+  let cnv = createCanvas(innerWidth, innerHeight);
+  cnv.parent('#sketch');
+  strokeWeight(2);
+  frameRate(frames);
+  colorMode(HSB, 100);
+  $('#words').toggle();
+}
 
 function draw() {
-  if (!isLocked) {
-    xAc = (abs(mouseX - mX) + xAc * 120) / 121;
-    if (xAc < 1) xAc = 0;
-    yAc = (abs(mouseY - mY) + xAc * 120) / 121;
-    if (yAc < 1) yAc = 0;
-    tAc = sqrt(xAc * xAc + yAc * yAc);
-    mX = mouseX;
-    mY = mouseY;
-    colorMode(HSB, 100);
-    tAc /= 150;
-    h = Math.max(0, -.1 * tAc + 1.1 * tAc * tAc) * 100;
-    background(h, 50, 100);
-    if (h < 10) {
-      setWords('Wiggle!', h * 3.6);
-
+  if (hasStarted) {
+    if (!isLocked) {
+      xAc = (abs(mouseX - mX) * mouseWeight + xAc * response) / (response + mouseWeight);
+      if (xAc < 1) xAc = 0;
+      yAc = (abs(mouseY - mY) * mouseWeight + xAc * response) / (response + mouseWeight);
+      if (yAc < 1) yAc = 0;
+      tAc = sqrt(xAc * xAc + yAc * yAc);
+      mX = mouseX;
+      mY = mouseY;
+      pAc=tAc;
+      tAc /= 150;
+      h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100;
+      console.log(h, tAc);
+      background(h, 50, 100);
+      if (h < 15) {
+        setWords('Wiggle!', h * 3.6);
+      }
+      else {
+        li = 72.5 + h * .25;
+        w = $('#words').css({ color: "hsl(" + Math.min(h * 3.6, 360) + ",100%," + li + "%)" });
+      }
+      if (h >= 100) {
+        isLocked = true;
+        snd.play();
+        li = 120;
+        $('#wordLink').attr("href", "page2");
+      }
     }
     else {
-      li = 75 + h * .25;
-      w = $('#words').css({ color: "hsl(" + Math.min(h * 3.6, 360) + ",100%," + li + "%)" });
-    }
-    if (h >= 100) {
-      isLocked = true;
-      snd.play();
-      li=120;
-      $('#wordLink').attr("href","page2");
+      background(h, 50, li);
+      li -= 16;
     }
   }
-  else {
-    background(h, 50, li);
-    li-=16;
+  else{
+    background(0, 50, 100);
   }
 }
+
+$('#wel').click(function(){
+  $('#wel').toggle();
+  $('#words').toggle();
+  hasStarted=true;
+})
+
 
 function setWords(words, col) {
   var w = $('#words');
@@ -61,3 +81,6 @@ function setWords(words, col) {
 function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
 }
+
+      //h = Math.max(0, -.1 * tAc + 1.1 * tAc * tAc) * 100;
+      //h = Math.max(0, 2.25 * tAc - 9 * Math.pow(tAc,2) + 14*Math.pow(tAc,3)-.8*Math.pow(tAc,4)-5.4*Math.pow(tAc,5)) * 100;
