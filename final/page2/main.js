@@ -1,19 +1,29 @@
-var scrolled = 0;
+var scrolled = 0.0;
 var width = $(document).width();
 var height = $(document).height();
 var min = Math.min(width, height);
 var scrollableElement = document.body; //document.getElementById('scrollableElement');
+var loops = 0;
+var flash = 0;
+var hide;
+var cnv;
+var scrollGoal = 0;
+var smoothing = 300;
+var isComplete = false;
+var intensity = 100;
+var snd2played = false;
+var snd = new Audio('../bloop.wav');
+var snd2 = new Audio('../blip.wav');
+
 
 scrollableElement.addEventListener('wheel', checkScrollDirection);
 
 function checkScrollDirection(event) {
     if (checkScrollDirectionIsUp(event)) {
-        scrolled--;
+        scrollGoal--;
     } else {
-        scrolled++;
+        scrollGoal++;
     }
-
-    console.log(scrolled);
 }
 
 function checkScrollDirectionIsUp(event) {
@@ -25,30 +35,44 @@ function checkScrollDirectionIsUp(event) {
 function setup() {
     let cnv = createCanvas(innerWidth, innerHeight);
     cnv.parent('#sketch');
-    strokeWeight(2);
-    frameRate(frames);
     colorMode(HSB, 100);
-    //scrolled = 60;
 }
 
 function draw() {
-    background(255);
+    background(0);
     strokeWeight(0);
     fill(0, 100, 75);
-    //rect(0,0,scrolled*30,height/10); 
-    //console.log(min);
-
-    //spiral(1, width, height, 0, 0, scrolled * 10000);
+    if (!isComplete) {
+        scrolled = (scrolled + scrollGoal * smoothing) / (smoothing + 1);
+        scrollGoal -= .03;
+        if (scrollGoal <= -30) scrollGoal = 30;
+    }
+    else {
+        if (intensity > -30) intensity -= .5;
+        else {
+            $('#next').css({ display: "block" });
+            if (!snd2played) {
+                snd2.play();
+                snd2played = true;
+            }
+        }
+    }
+    spiral(width / 30, width, height, 0, 0, (scrolled - height / 30) * 300);
+    loops = 0;
+    $('#wel').css({ top: "calc(50% + " + scrolled * 20 + "px)" });
     strokeWeight(scrolled);
-    //point(width/2,height/2);
+    flash++;
+}
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
 }
 function spiral(s, w, h, x, y, p) {
-    var loops=0;
+    fill((loops + flash) % 100, intensity, intensity * .8);
     if (p <= w) rect(x, y, p, s); // top
     else {
-        p -= w -s;
+        p -= w - s;
         rect(x, y, w, s);
-        if (p <= h ) rect(w - s + x, s + y, s, p - s); // right
+        if (p <= h) rect(w - s + x, s + y, s, p - s); // right
         else {
             p -= h - s;
             rect(w - s + x, s + y, s, h - s);
@@ -60,14 +84,16 @@ function spiral(s, w, h, x, y, p) {
                 else {
                     p -= h - s;
                     rect(x, y + h - s, s, -h + 2 * s);
-                    if(s<=w - s * 2&&s<h - s * 2){
+                    if (s <= w - s * 2 && s < h - s * 2) {
                         loops++;
-                        console.log(loops);
-                        fill(loops,100,75);
-                        spiral(s, w - s * 2, h - s * 2, x + s, y + s, p+s); //loop
-                }   }
+                        spiral(s * .95, w - s * 2, h - s * 2, x + s, y + s, p + s); //loop
+                    }
+                    else if (!isComplete == true) {
+                        isComplete = true;
+                        snd.play();
+                    }
+                }
             }
         }
     }
-    console.log(p);
 }

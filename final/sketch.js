@@ -33,7 +33,7 @@ function draw() {
       tAc = sqrt(xAc * xAc + yAc * yAc);
       mX = mouseX;
       mY = mouseY;
-      pAc=tAc;
+      pAc = tAc;
       tAc /= 150;
       h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100;
       console.log(h, tAc);
@@ -57,15 +57,15 @@ function draw() {
       li -= 16;
     }
   }
-  else{
+  else {
     background(0, 50, 100);
   }
 }
 
-$('#wel').click(function(){
+$('#wel').click(function () {
   $('#wel').toggle();
   $('#words').toggle();
-  hasStarted=true;
+  hasStarted = true;
 })
 
 
