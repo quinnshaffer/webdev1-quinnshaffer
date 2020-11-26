@@ -34,7 +34,7 @@ function draw() {
       mX = mouseX;
       mY = mouseY;
       pAc = tAc;
-      tAc /= 150;
+      tAc /= 100;
       h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100;
       console.log(h, tAc);
       background(h, 50, 100);
