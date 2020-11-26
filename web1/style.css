@@ -58,3 +58,11 @@ div{
     border-radius: 10%;
     padding:2%
 }
+::-webkit-scrollbar {
+    display: none;
+}
+*{
+    
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

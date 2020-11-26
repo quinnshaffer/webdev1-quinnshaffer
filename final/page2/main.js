@@ -37,6 +37,9 @@ function setup() {
     cnv.parent('#sketch');
     colorMode(HSB, 100);
 }
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
 
 function draw() {
     background(0);
@@ -48,7 +51,7 @@ function draw() {
         if (scrollGoal <= -30) scrollGoal = 30;
     }
     else {
-        if (intensity > -30) intensity -= .5;
+        if (intensity > -10) intensity -= .5;
         else {
             $('#next').css({ display: "block" });
             if (!snd2played) {
@@ -63,9 +66,7 @@ function draw() {
     strokeWeight(scrolled);
     flash++;
 }
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-}
+
 function spiral(s, w, h, x, y, p) {
     fill((loops + flash) % 100, intensity, intensity * .8);
     if (p <= w) rect(x, y, p, s); // top

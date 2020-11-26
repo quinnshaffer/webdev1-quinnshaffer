@@ -14,6 +14,10 @@ var frames = 60;
 var mouseWeight = 1.5;
 var response = 3 * frames;
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
 function setup() {
   let cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('#sketch');
@@ -36,7 +40,7 @@ function draw() {
       pAc = tAc;
       tAc /= 100;
       h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100;
-      console.log(h, tAc);
+      //console.log(h, tAc);
       background(h, 50, 100);
       if (h < 15) {
         setWords('Wiggle!', h * 3.6);
@@ -75,8 +79,8 @@ function setWords(words, col) {
   var l = Math.random() * ($(document).width() - w.width());
   var t = Math.random() * ($(document).height() - w.height());
   w.css({ left: l, top: t, color: "hsl(" + col + ",100%,75%)" });
-
 }
+
 
 function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
