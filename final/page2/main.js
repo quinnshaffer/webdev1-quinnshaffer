@@ -10,8 +10,8 @@ var smoothing = 300;
 var isComplete = false;
 var intensity = 100;
 var snd2played = false;
-var snd = new Audio('../bloop.wav');
-var snd2 = new Audio('../blip.wav');
+var snd = new Audio('../sounds/bloop.wav');
+var snd2 = new Audio('../sounds/blip.wav');
 
 
 scrollableElement.addEventListener('wheel', checkScrollDirection);
@@ -30,14 +30,17 @@ function checkScrollDirectionIsUp(event) {
     }
     return event.deltaY < 0;
 }
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+
 function setup() {
     let cnv = createCanvas(innerWidth, innerHeight);
     cnv.parent('#sketch');
     colorMode(HSB, 100);
 }
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-}
+
 
 function draw() {
     background(0);
