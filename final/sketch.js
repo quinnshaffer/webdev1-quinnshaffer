@@ -14,14 +14,18 @@ var frames = 60;
 var mouseWeight = 1.5;
 var response = 3 * frames;
 
-var touch=true;
+var touch = false;
+
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var oscillator = audioCtx.createOscillator();
+var gainNode = audioCtx.createGain();
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
 $(document.body).on("touchstart", function (e) {
-  touch=true;
+  touch = true;
 });
 
 function setup() {
@@ -31,6 +35,7 @@ function setup() {
   frameRate(frames);
   colorMode(HSB, 100);
   $('#words').toggle();
+
 }
 
 function draw() {
@@ -44,7 +49,7 @@ function draw() {
       mX = mouseX;
       mY = mouseY;
       pAc = tAc;
-      if(touch) tAc /= 50;
+      if (touch) tAc /= 50;
       else tAc /= 200;
       h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100; //defines the curve used to calulate the color
       background(h, 50, 100);
@@ -53,10 +58,11 @@ function draw() {
       }
       else {
         li = 72.5 + h * .25;
-        w = $('#words').css({ color: "hsl(" + Math.min(h * 3.6, 360) + ",100%," + li + "%)" }); 
+        w = $('#words').css({ color: "hsl(" + Math.min(h * 3.6, 360) + ",100%," + li + "%)" });
       }
       if (h >= 100) {
         isLocked = true;
+        oscillator.stop();
         snd.play();
         li = 120;
         $('#wordLink').attr("href", "page2");
@@ -70,12 +76,23 @@ function draw() {
   else {
     background(0, 50, 100);
   }
+  oscillator.frequency.setValueAtTime((h*10), audioCtx.currentTime);
 }
 
 $('#wel').click(function () {
   $('#wel').toggle();
   $('#words').toggle();
   hasStarted = true;
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  oscillator = audioCtx.createOscillator();
+  gainNode = audioCtx.createGain();
+  oscillator.type = 'sine';
+  oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
+  oscillator.connect(audioCtx.destination);
+  oscillator.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+  gainNode.gain.value = -.8;
+  oscillator.start();
 })
 
 

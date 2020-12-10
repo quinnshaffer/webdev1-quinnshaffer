@@ -9,7 +9,13 @@ function checkScrollDirection(event) {
     } else {
         if(b>=5) b-=5;   
     }
+    oscillator.start();
 }
+
+// create web audio api context
+
+
+
 
 function checkScrollDirectionIsUp(event) {
     if (event.wheelDelta) {

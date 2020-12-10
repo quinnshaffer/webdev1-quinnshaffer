@@ -18,6 +18,18 @@ var end;
 var flick = false;
 var distance;
 var force = 0;
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+// create Oscillator node
+var oscillator = audioCtx.createOscillator();
+var gainNode = audioCtx.createGain();
+oscillator.type = 'sine';
+oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
+oscillator.connect(audioCtx.destination);
+oscillator.connect(gainNode);
+gainNode.connect(audioCtx.destination);
+gainNode.gain.value=-.8;
+oscillator.start();
 
 
 scrollableElement.addEventListener('wheel', checkScrollDirection);
@@ -95,6 +107,8 @@ function draw() {
     loops = 0;
     $('#wel').css({ top: "calc(50% + " + scrolled * 20 + "px)" });
     flash++;
+    //console.log(Math.min(Math.max(.00003*Math.pow(Math.max(scrolled,0),3.821928),0),20000));
+    oscillator.frequency.setValueAtTime(Math.min(Math.max(.00003*Math.pow(Math.max(scrolled,0),3.821928),0),20000), audioCtx.currentTime);
     //$("#wel").css({color:"red"});
     //$("#wel").html(Math.floor(scrolled));
 }
@@ -123,6 +137,7 @@ function spiral(s, w, h, x, y, p) {
                     }
                     else if (!isComplete == true) {
                         isComplete = true;
+                        oscillator.stop();
                         snd.play();
                     }
                 }
