@@ -14,9 +14,15 @@ var frames = 60;
 var mouseWeight = 1.5;
 var response = 3 * frames;
 
+var touch=true;
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+$(document.body).on("touchstart", function (e) {
+  touch=true;
+});
 
 function setup() {
   let cnv = createCanvas(innerWidth, innerHeight);
@@ -38,7 +44,8 @@ function draw() {
       mX = mouseX;
       mY = mouseY;
       pAc = tAc;
-      tAc /= 100;
+      if(touch) tAc /= 50;
+      else tAc /= 200;
       h = Math.max(0, -1 * tAc + 21.5 * Math.pow(tAc, 2) - 78 * Math.pow(tAc, 3) + 110.5 * Math.pow(tAc, 4) - 51.5 * Math.pow(tAc, 5)) * 100; //defines the curve used to calulate the color
       background(h, 50, 100);
       if (h < 15) {
