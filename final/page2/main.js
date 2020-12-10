@@ -13,8 +13,32 @@ var snd2played = false;
 var snd = new Audio('../sounds/bloop.wav');
 var snd2 = new Audio('../sounds/blip.wav');
 
+var start;
+var end;
+var flick = false;
+var distance;
+var force = 0;
+
 
 scrollableElement.addEventListener('wheel', checkScrollDirection);
+
+$(document.body).on("touchstart", function (e) {
+    flick = false;
+    var contact = e.originalEvent.touches;
+    start = contact[0].pageY;
+});
+$(document.body).on("touchmove", function (e) {
+    var contact = e.originalEvent.touches;
+    end = contact[0].pageY;
+    distance = end - start;
+    scrollGoal += distance / 50;
+    start = contact[0].pageY;
+});
+
+$(document.body).on("touchend", function (e) {
+    flick = true;
+    force = distance;
+});
 
 function checkScrollDirection(event) {
     if (checkScrollDirectionIsUp(event)) {
@@ -48,7 +72,13 @@ function draw() {
     fill(0, 100, 75);
     if (!isComplete) {
         scrolled = (scrolled + scrollGoal * smoothing) / (smoothing + 1); //smooths scrolling
-        scrollGoal -= .03;
+        scrollGoal -= .05;
+        if (flick) {
+            if(force>10||force<-10)
+            scrollGoal+= force/50;
+            force*=.87;
+        }
+        else flick=false;
         if (scrollGoal <= -30) scrollGoal = 30;
     }
     else {
@@ -61,10 +91,12 @@ function draw() {
             }
         }
     }
-    spiral(width / 30, width, height, 0, 0, (scrolled - height / 30) * 300);
+    if (scrollGoal > 30) spiral(width / 30, width, height, 0, 0, (scrolled - height / 30) * 300);
     loops = 0;
     $('#wel').css({ top: "calc(50% + " + scrolled * 20 + "px)" });
     flash++;
+    //$("#wel").css({color:"red"});
+    //$("#wel").html(Math.floor(scrolled));
 }
 
 function spiral(s, w, h, x, y, p) {
@@ -98,3 +130,52 @@ function spiral(s, w, h, x, y, p) {
         }
     }
 }
+
+$(function () {
+    $.fn.swipe = function (callback) {
+        var touchDown = false,
+            originalPosition = null,
+            $el = $(this);
+
+        function swipeInfo(event) {
+            var x = event.originalEvent.pageX,
+                y = event.originalEvent.pageY,
+                dx, dy;
+
+            dx = (x > originalPosition.x) ? "right" : "left";
+            dy = (y > originalPosition.y) ? "down" : "up";
+
+            return {
+                direction: {
+                    x: dx,
+                    y: dy
+                },
+                offset: {
+                    x: x - originalPosition.x,
+                    y: originalPosition.y - y
+                }
+            };
+        }
+
+        $el.on("touchstart mousedown", function (event) {
+            touchDown = true;
+            originalPosition = {
+                x: event.originalEvent.pageX,
+                y: event.originalEvent.pageY
+            };
+        });
+
+        $el.on("touchend mouseup", function () {
+            touchDown = false;
+            originalPosition = null;
+        });
+
+        $el.on("touchmove mousemove", function (event) {
+            if (!touchDown) { return; }
+            var info = swipeInfo(event);
+            callback(info.direction, info.offset);
+        });
+
+        return true;
+    };
+});
