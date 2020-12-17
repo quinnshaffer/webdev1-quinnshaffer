@@ -76,6 +76,7 @@ function setup() {
     cnv.parent('#sketch');
     colorMode(HSB, 100);
     stroke(0,0);
+    
 }
 
 
@@ -112,6 +113,7 @@ function draw() {
     oscillator.frequency.setValueAtTime(Math.min(Math.max(.00003*Math.pow(Math.max(scrolled,0),3.821928),0),20000), audioCtx.currentTime);
     //$("#wel").css({color:"red"});
     //$("#wel").html(Math.floor(scrolled));
+    
 }
 
 function spiral(s, w, h, x, y, p) {

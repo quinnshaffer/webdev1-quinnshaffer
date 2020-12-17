@@ -69,6 +69,7 @@ function mousePressed() {
         node2x = mouseX-off2x;
         node2y = mouseY-off2y;
       }
+      
     
   }
 
@@ -133,7 +134,6 @@ function draw() {
     ellipse(node1x, node1y,rad);
     fill(col2);
     ellipse( node2x,node2y,rad);
-    
     //stroke(100);
     //strokeWeight(10);
     //point(ant1x,ant1y);
