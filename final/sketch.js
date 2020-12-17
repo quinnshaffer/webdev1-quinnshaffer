@@ -35,7 +35,7 @@ function setup() {
   frameRate(frames);
   colorMode(HSB, 100);
   $('#words').toggle();
-
+  stroke(0,0);
 }
 
 function draw() {
